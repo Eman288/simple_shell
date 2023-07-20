@@ -1,36 +1,23 @@
 #include "main.h"
-char *getpath(void)
-{
-	char *path, *m;
 
-	int i;
 
-	for (i = 0; environ[i]; i++)
-	{
-		m = environ[i];
-		if (m[0] == 'P' && m[1] == 'A' && m[2] == 'T' && m[3] == 'H')
-		{
-			return (m);
-		}
-	}
-	return (NULL);
-}
+/**
+ * get_location - the function return the location of the command
+ * @cmd: the command we want its location
+ * Return: the command's location or NULL if not found
+ */
+
 char *get_location(char *cmd)
 {
-	char *p, *path, *path_copy, *path_token, *file_path, *o;
+	char *path, *path_copy, *path_token, *file_path;
 
 	int cmd_len, dir_len;
 
 	struct stat buffer;
 
-	p = getpath();
-	/*o = malloc(sizeof(char) * _strlen(p) + 1);*/
-	_strcpy(o, p);
-	/*
-	path = strtok(o, "=");
-	path = strtok(NULL, "\0");
+	path = _getenv("PATH");
 	if (path)
-	{	_strcpy(path_copy, path);
+	{	path_copy = _strdup(path);
 		cmd_len = _strlen(cmd);
 		path_token = strtok(path_copy, ":");
 		while (path_token != NULL)
@@ -44,19 +31,15 @@ char *get_location(char *cmd)
 			if (stat(file_path, &buffer) == 0)
 			{
 				free(path_copy);
-				free(o);
 				return (file_path);
 			}
 			free(file_path);
 			path_token = strtok(NULL, ":");
 		}
 		free(path_copy);
-		*free(o);
 		if (stat(cmd, &buffer) == 0)
 			return (cmd);
 		return (NULL);
 	}
-	*free(o);*/
-	printf("%s\n" , o);
 	return (NULL);
 }

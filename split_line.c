@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * split_line - the function is used to split the line into tokens
+ * @string: the string taken from the user by get_line
+ * Return: an array of tonks
+ */
+
 char **split_line(char *string)
 {
 	char **tonks, *token;
@@ -9,10 +15,10 @@ char **split_line(char *string)
 	i = 0;
 	len = _strlen(string);
 	if (len == 0)
-		return(NULL);
-	tonks = malloc(sizeof(char *) * (len +1));
+		return (NULL);
+	tonks = malloc(sizeof(char *) * (len + 1));
 	if (!tonks)
-		return(NULL);
+		return (NULL);
 	token = strtok(string, " \t\r\n\a");
 	while (token)
 	{
@@ -20,12 +26,12 @@ char **split_line(char *string)
 		if (!tonks[i])
 		{
 			free(tonks);
-			return(NULL);
+			return (NULL);
 		}
 		_strcpy(tonks[i], token);
 		token = strtok(NULL, " \t\r\n\a");
 		i++;
 	}
 	tonks[i] = NULL;
-	return(tonks);
+	return (tonks);
 }

@@ -1,4 +1,11 @@
 #include "main.h"
+
+/**
+ * do_cd - execute the cd command
+ * @tonks:  an array of tokens
+ * Return: Always (1)
+ */
+
 int do_cd(char **tonks)
 {
 	if (tonks[1] == NULL)
@@ -12,10 +19,16 @@ int do_cd(char **tonks)
 			perror("erroe");
 		}
 	}
-	return(1);
+	return (1);
 }
 
-int do_exit(char **tonks)
+/**
+ * do_exit - exit the shell
+ * @tonks: an array of tokens
+ * Return: Always (0)
+ */
+
+int do_exit(char **tonks __attribute__((unused)))
 {
-	return(0);
+	return (0);
 }

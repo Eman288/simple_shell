@@ -1,8 +1,12 @@
 #include "main.h"
 
+/**
+ * get_line - the function takes a line from the user
+ * Return: return the line taken from the user
+ */
 char *get_line(void)
 {
-	ssize_t n;
+	size_t n;
 
 	char *buf = NULL;
 
@@ -11,5 +15,5 @@ char *get_line(void)
 	{
 		exit(EXIT_SUCCESS);
 	}
-	return(buf);
+	return (buf);
 }

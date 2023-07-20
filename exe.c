@@ -2,15 +2,22 @@
 int do_cd(char **tonks);
 int do_exit(char **tonks);
 char *built_in[] = {
-  "cd",
-  "exit",
-  NULL
+	"cd",
+	"exit",
+	NULL
 };
 int (*built_in_func[]) (char **) = {
-  &do_cd,
-  &do_exit
+	&do_cd,
+	&do_exit
 };
-int exe (char **tonks)
+
+/**
+ * exe - a funtion that makes sure if the command is a built in function or not
+ * @tonks: an array of tokens taken from the user after spliting it
+ * Return: the value of the built in function or the value of the execution
+ */
+
+int exe(char **tonks)
 {
 	int i;
 
@@ -18,8 +25,8 @@ int exe (char **tonks)
 	{
 		if (_strcmp(tonks[0], built_in[i]) == 0)
 		{
-			return(*built_in_func[i])(tonks);
+			return ((*built_in_func[i])(tonks));
 		}
 	}
-	return(is_execute(tonks));
+	return (is_execute(tonks));
 }

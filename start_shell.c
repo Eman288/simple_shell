@@ -1,12 +1,18 @@
 #include "main.h"
 
-int main (void)
+/**
+ *main - the main function to launch the prompt
+ *Return: Always (0)
+ */
+int main(void)
 {
 	int stat;
 
 	char *string, **tonks;
 
-	do{
+	if (isatty(STDIN_FILENO) == 1)
+	{
+	do {
 		write(STDOUT_FILENO, "($) ", 4);
 		string = get_line();
 		tonks = split_line(string);
@@ -14,6 +20,7 @@ int main (void)
 
 		free(tonks);
 		free(string);
-		printf("\n");
-	} while(stat);
+	} while (stat);
+	}
+	return (0);
 }

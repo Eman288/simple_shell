@@ -1,15 +1,22 @@
 #include "main.h"
 
+/**
+ * real_exe - the function executes the command send by the user
+ * @cmd: the command we want to execute
+ * @tonks: an array of tokens
+ * Return: if we didn't exit we will return (1)
+ */
+
 int real_exe(char *cmd, char **tonks)
 {
-	pid_t pid, wpid;
+	pid_t pid/*, wpid*/;
 
-	int status;
+	/*int status;*/
 
 	pid = fork();
-	if(pid == 0)
+	if (pid == 0)
 	{
-		if (execuve(cmd,tonks, NULL)) == -1)
+		if (execve(cmd, tonks, NULL) == -1)
 		{
 			perror("error");
 		}
@@ -21,7 +28,7 @@ int real_exe(char *cmd, char **tonks)
 	}
 	else
 	{
-		wait();
+		wait(NULL);
 	}
-	return(1);
+	return (1);
 }
