@@ -1,14 +1,18 @@
 #include "main.h"
 int do_cd(char **tonks);
 int do_exit(char **tonks);
+int do_env(char **tonks);
+
 char *built_in[] = {
 	"cd",
 	"exit",
+	"env",
 	NULL
 };
 int (*built_in_func[]) (char **) = {
 	&do_cd,
-	&do_exit
+	&do_exit,
+	&do_env
 };
 
 /**

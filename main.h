@@ -21,4 +21,6 @@ char *get_location(char *cmd);
 char *_getenv(char *wanted);
 int real_execute(char *path, char **tonks);
 int real_exe(char *cmd, char **tonks);
+int _print_str(char *str);
+int _write_char(char c);
 #endif

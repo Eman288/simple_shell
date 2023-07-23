@@ -15,9 +15,11 @@ int main(void)
 	do {
 		write(STDOUT_FILENO, "($) ", 4);
 		string = get_line();
-		tonks = split_line(string);
-		stat = exe(tonks);
-
+		if (string != NULL)
+		{
+			tonks = split_line(string);
+			stat = exe(tonks);
+		}
 		free(tonks);
 		free(string);
 	} while (stat);
