@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	int stat;
+	int stat, n;
 
 	char *string, **tonks;
 
@@ -17,12 +17,28 @@ int main(void)
 		string = get_line();
 		if (string != NULL)
 		{
-			tonks = split_line(string);
-			stat = exe(tonks);
+			n = check_for_op(string);
+			printf("this is the op %d\n", n);
+			if (n == 0)
+			{
+				tonks = split_line(string);
+				stat = exe(tonks);
+			}
+			/*
+			else if (n == 1)
+				stat = exe_col(string);
+			else if (n == 2)
+                                printf("it is &!");
+			else if (n == 3)
+                                printf("it is |!");*/
 		}
 		free(tonks);
 		free(string);
 	} while (stat);
+	}
+	else
+	{
+		/*return(non_interactive());*/
 	}
 	return (0);
 }
