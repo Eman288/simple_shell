@@ -7,6 +7,7 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+
 char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
@@ -23,4 +24,9 @@ int real_execute(char *path, char **tonks);
 int real_exe(char *cmd, char **tonks);
 int _print_str(char *str);
 int _write_char(char c);
+char **strtow(char *str, char *d);
+ssize_t input_buf(info_t *info, char **buf, size_t *len);
+ssize_t get_input(info_t *info);
+ssize_t read_buf(info_t *info, char *buf, size_t *i);
+
 #endif
