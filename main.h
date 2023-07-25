@@ -7,9 +7,6 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-/*
- * <<<<<<< HEAD
- * */
 #include <fcntl.h>
 /*
  * =======
@@ -32,10 +29,12 @@ int real_execute(char *path, char **tonks);
 int real_exe(char *cmd, char **tonks);
 int _print_str(char *str);
 int _write_char(char c);
-char **strtow(char *str, char *d);
-ssize_t input_buf(info_t *info, char **buf, size_t *len);
-ssize_t get_input(info_t *info);
-ssize_t read_buf(info_t *info, char *buf, size_t *i);
+/*
+*char **strtow(char *str, char *d);
+*ssize_t input_buf(info_t *info, char **buf, size_t *len);
+*ssize_t get_input(info_t *info);
+*ssize_t read_buf(info_t *info, char *buf, size_t *i);
+*/
 int check_for_op(char *string);
 int non_interactive(void);
 int exe_col(char *string);

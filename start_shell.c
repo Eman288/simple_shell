@@ -23,15 +23,9 @@ int main(void)
 				tonks = split_line(string);
 				stat = exe(tonks);
 				free(tonks);
-			}			
+			}
 			else if (n == 1)
 				stat = exe_col(string);
-			/*
-			else if (n == 2)
-                                printf("it is &!");
-			else if (n == 3)
-                                printf("it is |!");
-				*/
 		}
 		free(string);
 	} while (stat);

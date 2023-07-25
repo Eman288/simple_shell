@@ -7,11 +7,9 @@
 
 int non_interactive(void)
 {
-	char *string, **tonks, *buf;
+	char *string, **tonks;
 
-	int n, f, r;
-
-	FILE *fd;
+	int n;
 
 	string = get_line();
 	/*
@@ -29,10 +27,7 @@ int non_interactive(void)
 	*/
 		tonks = split_line(string);
 		n = exe(tonks);
-	/*
-	 * }
-	 * */
 	free(string);
 	free(tonks);
-	return (0);
+	return (n);
 }
