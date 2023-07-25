@@ -18,27 +18,27 @@ int main(void)
 		if (string != NULL)
 		{
 			n = check_for_op(string);
-			printf("this is the op %d\n", n);
 			if (n == 0)
 			{
 				tonks = split_line(string);
 				stat = exe(tonks);
 				free(tonks);
-			}
-			
+			}			
 			else if (n == 1)
-				stat = exe_col(string);/*
+				stat = exe_col(string);
+			/*
 			else if (n == 2)
                                 printf("it is &!");
 			else if (n == 3)
-                                printf("it is |!");*/
+                                printf("it is |!");
+				*/
 		}
 		free(string);
 	} while (stat);
 	}
 	else
 	{
-		/*return(non_interactive());*/
+		return (non_interactive());
 	}
 	return (0);
 }

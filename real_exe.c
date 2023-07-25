@@ -9,22 +9,20 @@
 
 int real_exe(char *cmd, char **tonks)
 {
-	pid_t pid/*, wpid*/;
-
-	/*int status;*/
+	pid_t pid;
 
 	pid = fork();
 	if (pid == 0)
 	{
 		if (execve(cmd, tonks, NULL) == -1)
 		{
-			perror("error");
+			perror("Error:");
 		}
 		exit(0);
 	}
 	else if (pid < 0)
 	{
-		perror("error");
+		perror("Error:");
 	}
 	else
 	{

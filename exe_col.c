@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * exe_col - a function to execute a line with ; operator(s)
+ * @string: the string
+ * Return: 1 in success, 0 in failure
+ */
+
 int exe_col(char *string)
 {
 	char **tonks, **comm;

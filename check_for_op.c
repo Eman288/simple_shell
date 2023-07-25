@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * check_for_op - a function to check which operator is used
+ * @string: the string
+ * Return: the check value
+ */
 int check_for_op(char *string)
 {
 	int m, flag;

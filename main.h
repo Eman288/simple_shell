@@ -7,11 +7,15 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-/*<<<<<<< HEAD*/
+/*
+ * <<<<<<< HEAD
+ * */
 #include <fcntl.h>
-/*=======
+/*
+ * =======
 
->>>>>>> 8d1fc3d45fdb3ac67d06a08bc4155b45addcb7a9*/
+>>>>>>> 8d1fc3d45fdb3ac67d06a08bc4155b45addcb7a9
+*/
 char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
 int _strcmp(char *s1, char *s2);

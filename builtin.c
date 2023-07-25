@@ -10,13 +10,13 @@ int do_cd(char **tonks)
 {
 	if (tonks[1] == NULL)
 	{
-		perror("erroe");
+		perror("error");
 	}
 	else
 	{
 		if (chdir(tonks[1]) != 0)
 		{
-			perror("erroe");
+			perror("no such file or directory");
 		}
 	}
 	return (1);

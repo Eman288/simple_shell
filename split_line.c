@@ -18,13 +18,17 @@ char **split_line(char *string)
 		return (NULL);
 	tonks = malloc(sizeof(char *) * (len + 1));
 	if (!tonks)
+	{
+		perror("hsh: memory allocation error");
 		return (NULL);
+	}
 	token = strtok(string, " \t\r\n\a");
 	while (token)
 	{
 		tonks[i] = malloc(sizeof(char) * _strlen(token) + 1);
 		if (!tonks[i])
 		{
+			perror("hsh: memory allocation error");
 			free(tonks);
 			return (NULL);
 		}

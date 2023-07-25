@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * split_on - a function to split the line on the spesific delim
+ * @str: the string
+ * @delim: the char we will split on
+ * Return: an array of tokens
+ */
+
 char **split_on(char *str, char *delim)
 {
 	char **tonks, *tok;
@@ -12,13 +19,17 @@ char **split_on(char *str, char *delim)
 		return (NULL);
 	tonks = malloc(sizeof(char *) * (len + 1));
 	if (!tonks)
+	{
+		perror("hsh: memory allocation error");
 		return (NULL);
+	}
 	tok = strtok(str, delim);
 	while (tok)
 	{
 		tonks[i] = malloc(sizeof(char) * _strlen(tok) + 1);
 		if (!tok[i])
 		{
+			perror("hsh: memory allocation error");
 			free(tonks);
 			return (NULL);
 		}

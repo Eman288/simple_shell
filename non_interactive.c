@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * non_interactive - a function to start the shell in the non-interactive mode
+ * Return: 0
+ */
+
 int non_interactive(void)
 {
 	char *string, **tonks, *buf;
@@ -9,7 +14,8 @@ int non_interactive(void)
 	FILE *fd;
 
 	string = get_line();
-	if(access(string, F_OK))
+	/*
+	 * if(access(string, F_OK))
 	{
 		printf("file!");
 		f = open(string , O_RDONLY);
@@ -20,10 +26,13 @@ int non_interactive(void)
 	}
 	else
 	{
+	*/
 		tonks = split_line(string);
 		n = exe(tonks);
-	}
+	/*
+	 * }
+	 * */
 	free(string);
 	free(tonks);
-	return(0);
+	return (0);
 }

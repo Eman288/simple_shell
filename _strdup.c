@@ -26,6 +26,7 @@ char *_strdup(char *str)
 	s = (char *) malloc(n * sizeof(char) + 1);
 	if (s == 0)
 	{
+		perror("hsh: memory allocation error");
 		return (NULL);
 	}
 	if (n == 0 || s == NULL)
