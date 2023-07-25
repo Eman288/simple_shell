@@ -7,7 +7,11 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+/*<<<<<<< HEAD*/
 #include <fcntl.h>
+/*=======
+
+>>>>>>> 8d1fc3d45fdb3ac67d06a08bc4155b45addcb7a9*/
 char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
@@ -24,4 +28,12 @@ int real_execute(char *path, char **tonks);
 int real_exe(char *cmd, char **tonks);
 int _print_str(char *str);
 int _write_char(char c);
+char **strtow(char *str, char *d);
+ssize_t input_buf(info_t *info, char **buf, size_t *len);
+ssize_t get_input(info_t *info);
+ssize_t read_buf(info_t *info, char *buf, size_t *i);
+int check_for_op(char *string);
+int non_interactive(void);
+int exe_col(char *string);
+char **split_on(char *str, char *delim);
 #endif
