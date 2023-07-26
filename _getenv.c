@@ -8,7 +8,7 @@
 
 char *_getenv(char *wanted)
 {
-	char *token, *path_cpy;
+	char *token, *path_cpy, *s;
 
 	int i;
 
@@ -19,8 +19,11 @@ char *_getenv(char *wanted)
 		token = strtok(path_cpy, "=");
 		if (_strcmp(token, wanted) == 0)
 		{
-			return (strtok(NULL, "\0"));
+			s = _strdup(strtok(NULL, "\0"));
+			free(path_cpy);
+			return (s);
 		}
+		free(path_cpy);
 		i++;
 	}
 	return (NULL);
