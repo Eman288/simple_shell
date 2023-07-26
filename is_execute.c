@@ -17,8 +17,11 @@ int is_execute(char **tonks)
 	if (file_path == NULL)
 	{
 		_print_str("./hsh: No such file or directory\n");
-		/*for (j = 0; tonks[j]; j++)
-			free(tonks[j]);*/
+		/*
+		 * for (j = 0; tonks[j]; j++)
+		 * free(tonks[j]);
+		 *
+		 */
 		free(file_path);
 		return (1);
 	}
