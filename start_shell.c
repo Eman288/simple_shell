@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	int stat, n;
+	int stat, n, j;
 
 	char *string, **tonks;
 
@@ -22,6 +22,8 @@ int main(void)
 			{
 				tonks = split_line(string);
 				stat = exe(tonks);
+				for (j = 0; tonks[j]; j++)
+					free(tonks[j]);
 				free(tonks);
 			}
 			else if (n == 1)

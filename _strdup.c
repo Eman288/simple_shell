@@ -27,10 +27,12 @@ char *_strdup(char *str)
 	if (s == 0)
 	{
 		perror("hsh: memory allocation error");
+		free(s);
 		return (NULL);
 	}
 	if (n == 0 || s == NULL)
 	{
+		free(s);
 		return (NULL);
 	}
 	str = s;

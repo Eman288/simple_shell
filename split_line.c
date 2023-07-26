@@ -10,7 +10,7 @@ char **split_line(char *string)
 {
 	char **tonks, *token;
 
-	int len, i;
+	int len, i, j;
 
 	i = 0;
 	len = _strlen(string);
@@ -29,6 +29,8 @@ char **split_line(char *string)
 		if (!tonks[i])
 		{
 			perror("hsh: memory allocation error");
+			for (j = 0; j <= i; j++)
+				free(tonks[j]);
 			free(tonks);
 			return (NULL);
 		}

@@ -9,7 +9,7 @@
 
 int real_exe(char *cmd, char **tonks)
 {
-	pid_t pid;
+	pid_t pid, j;
 
 	pid = fork();
 	if (pid == 0)
@@ -18,6 +18,9 @@ int real_exe(char *cmd, char **tonks)
 		{
 			perror("Error:");
 		}
+		for (j = 0; tonks[j]; j++)
+			free(tonks[j]);
+		free(tonks);
 		exit(0);
 	}
 	else if (pid < 0)

@@ -11,7 +11,7 @@ char **split_on(char *str, char *delim)
 {
 	char **tonks, *tok;
 
-	int len, i;
+	int len, i, j;
 
 	i = 0;
 	len = _strlen(str);
@@ -30,6 +30,8 @@ char **split_on(char *str, char *delim)
 		if (!tok[i])
 		{
 			perror("hsh: memory allocation error");
+			for (j = 0; j <= i; j++)
+				free(tonks[j]);
 			free(tonks);
 			return (NULL);
 		}

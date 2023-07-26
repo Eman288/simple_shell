@@ -10,7 +10,7 @@ int exe_col(char *string)
 {
 	char **tonks, **comm;
 
-	int i;
+	int i, j;
 
 	i = 0;
 	tonks = split_on(string, ";");
@@ -23,10 +23,22 @@ int exe_col(char *string)
 	{
 		comm = split_line(tonks[i]);
 		if (exe(comm) == 0)
+		{
+			for (j = 0; comm[j]; j++)
+				free(comm[j]);
+			free(comm);
+			for (j = 0; j <= i; j++)
+				free(tonks[j]);
+			free(tonks[j]);
 			return (0);
+		}
+		for (j = 0; comm[j]; j++)
+			free(comm[j]);
 		free(comm);
 		i++;
 	}
+	for (j = 0; j <= i; j++)
+		free(tonks[j]);
 	free(tonks);
 	return (1);
 }
