@@ -5,24 +5,20 @@
 *@src: a char
 *Return: Always 0 (Success)
 */
-char *_strcat(char *dest, char *src)
+char *_strcat(char *dest,const char *src)
 {
-	int n;
-
 	char *s;
 
-	s = dest;
-	n = 0;
+	s = dest + _strlen(dest);
+	/*
 	while (*dest != '\0')
 	{
 		n++;
 		dest++;
 	}
+	*/
 	while (*src != '\0')
-	{
-		*dest = *src;
-		src++;
-		dest++;
-	}
-	return (s);
+		*s++ = *src++;
+	*s = '\0';
+	return (dest);
 }

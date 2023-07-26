@@ -14,7 +14,7 @@
 >>>>>>> 8d1fc3d45fdb3ac67d06a08bc4155b45addcb7a9
 */
 char *_strcpy(char *dest, char *src);
-char *_strcat(char *dest, char *src);
+char *_strcat(char *dest,const char *src);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
 char *_strdup(char *str);

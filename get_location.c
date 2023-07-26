@@ -13,6 +13,7 @@ char *get_location(char *cmd)
 
 	struct stat buffer;
 
+	file_path = "";
 	path = _getenv("PATH");
 	if (path)
 	{	path_copy = _strdup(path);

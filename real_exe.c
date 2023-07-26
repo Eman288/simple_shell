@@ -21,7 +21,6 @@ int real_exe(char *cmd, char **tonks)
 		for (j = 0; tonks[j]; j++)
 			free(tonks[j]);
 		free(tonks);
-		free(cmd);
 		exit(0);
 	}
 	else if (pid < 0)

@@ -8,7 +8,9 @@
 */
 char *_strdup(char *str)
 {
-	char *s, *c;
+	char *c;
+
+	static char *s;
 
 	int n;
 
@@ -18,11 +20,7 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	while (*str != '\0')
-	{
-		n++;
-		str++;
-	}
+	n = _strlen(str);
 	s = (char *) malloc(n * sizeof(char) + 1);
 	if (s == 0)
 	{
@@ -35,12 +33,13 @@ char *_strdup(char *str)
 		free(s);
 		return (NULL);
 	}
-	str = s;
-	while (*c != '\0')
+	c = s;
+	while (*str)
 	{
-		*s = *c;
-		s++;
+		*c = *str;
 		c++;
+		str++;
 	}
-	return (str);
+	*c = '\0';
+	return (s);
 }
