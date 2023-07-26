@@ -31,6 +31,10 @@ int real_exe(char *cmd, char **tonks)
 	{
 		wait(NULL);
 	}
+	if (_strcmp(cmd, tonks[0]) == 0)
+	{
+		return (1);
+	}
 	free(cmd);
 	return (1);
 }
