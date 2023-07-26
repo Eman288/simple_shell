@@ -10,10 +10,9 @@ int main(void)
 
 	char *string, **tonks;
 
-	if (isatty(STDIN_FILENO) == 1)
-	{
 	do {
-		write(STDOUT_FILENO, "($) ", 4);
+		if (isatty(STDIN_FILENO) == 1)
+			write(STDOUT_FILENO, "($) ", 4);
 		string = get_line();
 		if (string != NULL)
 		{
@@ -30,11 +29,8 @@ int main(void)
 				stat = exe_col(string);
 		}
 		free(string);
+		if (isatty(STDIN_FILENO) != 1)
+			return (0);
 	} while (stat);
-	}
-	else
-	{
-		return (non_interactive());
-	}
 	return (0);
 }
